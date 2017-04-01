@@ -69,7 +69,7 @@ class ShoppingCartApp extends Component {
 
 		return (
 			<div className="ShoppingCartApp">
-				<h1>ShoppingCartApp</h1>
+				<h1>ShoppingCartApp - Redux</h1>
 
 				<input type="text" ref="item_input" />
 				<button onClick={this.handleAddItem}>Add item</button>
