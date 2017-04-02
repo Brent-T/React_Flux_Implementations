@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import actions from './Redux/action';
+import ShoppingCartActions from './Redux/action';
 
 class ShoppingCartApp extends Component {
 	constructor(props) {
@@ -26,7 +26,7 @@ class ShoppingCartApp extends Component {
 		const { store } = this.props;
 		const input = this.refs.item_input;
 		store.dispatch({
-			type: actions.ADD_ITEM,
+			type: ShoppingCartActions.ADD_ITEM,
 			payload: { name: input.value, count: 1 }
 		});
 		input.value = '';
@@ -35,7 +35,7 @@ class ShoppingCartApp extends Component {
 	handleRemoveItem(itemId) {
 		const { store } = this.props;
 		store.dispatch({
-			type: actions.REMOVE_ITEM,
+			type: ShoppingCartActions.REMOVE_ITEM,
 			payload: { id: itemId }
 		});
 	}
@@ -43,7 +43,7 @@ class ShoppingCartApp extends Component {
 	handleIncrementItem(itemId) {
 		const { store } = this.props;
 		store.dispatch({
-			type: actions.INCREMENT_ITEM,
+			type: ShoppingCartActions.INCREMENT_ITEM,
 			payload: { id: itemId }
 		});
 	}
@@ -51,7 +51,7 @@ class ShoppingCartApp extends Component {
 	handleDecrementItem(itemId) {
 		const { store } = this.props;
 		store.dispatch({
-			type: actions.DECREMENT_ITEM,
+			type: ShoppingCartActions.DECREMENT_ITEM,
 			payload: { id: itemId }
 		});
 	}
@@ -59,7 +59,7 @@ class ShoppingCartApp extends Component {
 	handleClearCart() {
 		const { store } = this.props;
 		store.dispatch({
-			type: actions.CLEAR_CART
+			type: ShoppingCartActions.CLEAR_CART
 		});
 	}
 

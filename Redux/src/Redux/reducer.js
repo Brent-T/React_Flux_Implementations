@@ -27,7 +27,7 @@ const shoppingcart = (state = initialShoppingCartState, action = {}) => {
 			const { id } = action.payload;
 			return state.map(item => {
 				if(item.id === id) {
-					item.count = item.count === 0 ? 0 : item.count--;
+					item.count === 0 ? 0 : item.count--;
 				}
 				return item;
 			});
